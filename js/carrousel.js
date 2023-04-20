@@ -14,6 +14,7 @@
     /* ------------------------ ouvrir boite modele */
     let index = 0
     let ancien_index = -1
+    let position = 0 //permet d indexer les images de la galerie 
 
     boutcarrousel__ouvrir.addEventListener('mousedown', function(){
         carrousel.classList.add('carrousel--ouvrir')
@@ -25,7 +26,14 @@
     })
 
     function ajouter_img_dans_carroussel(){
+        
         for(const elm of galerie__img){
+            elm.dataset.index = position 
+            elm.addEventListener('mousedown', function(){
+                index = this.dataset.index
+                afficher_image();
+            })
+
             creation_img_carrousel(elm)
             creation_radio_carrousel()
         }
@@ -44,7 +52,7 @@
     /**
      * creation d un radio noutton
      */
-    let position = 0
+
 
     function creation_radio_carrousel(){
         let rad = document.createElement('input')
@@ -57,17 +65,22 @@
 
         rad.addEventListener('mousedown', function(){
             //console.log(this.dataset.index)
-           // carrousel__figure.children[this.dataset.index].style.opacity = 1
+            // carrousel__figure.children[this.dataset.index].style.opacity = 1
             index = this.dataset.index
-            if(ancien_index!= -1){
-               // carrousel__figure.children[ancien_index].style.opacity = 0
-                carrousel__figure.children[ancien_index].classList.remove('carrousel__img--activer')
-            }
-            carrousel__figure.children[index].classList.add('carrousel__img--activer')
-            //carrousel__figure.children[index].style.opacity = 1
-            ancien_index = index
+            afficher_image()
 
         })
+    }
+
+    function afficher_image(){
+
+           if(ancien_index!= -1){
+              // carrousel__figure.children[ancien_index].style.opacity = 0
+               carrousel__figure.children[ancien_index].classList.remove('carrousel__img--activer')
+           }
+           carrousel__figure.children[index].classList.add('carrousel__img--activer')
+           //carrousel__figure.children[index].style.opacity = 1
+           ancien_index = index
     }
 
 })() //fonction auto-executante
