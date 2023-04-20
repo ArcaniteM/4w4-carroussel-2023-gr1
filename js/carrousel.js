@@ -77,11 +77,18 @@
            if(ancien_index!= -1){
               // carrousel__figure.children[ancien_index].style.opacity = 0
                carrousel__figure.children[ancien_index].classList.remove('carrousel__img--activer')
-           }
+              //carrousel__form.children[ancient_index].checked = false
+            }
            carrousel__figure.children[index].classList.add('carrousel__img--activer')
            //carrousel__figure.children[index].style.opacity = 1
            ancien_index = index
     }
+
+    /**
+     * permet de verifier si carrousel--activer se trouve dans la liste de classes 
+     * Carrousel.classList.contain('carrousel--activer')
+     * carrousel.classList.remove('carrousel--activer')
+     */
 
 })() //fonction auto-executante
 
