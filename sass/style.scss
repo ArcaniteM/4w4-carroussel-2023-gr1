@@ -16,6 +16,12 @@
     top :5px;
     right : 5px;
     z-index: 3;
+    width: 2em;
+    height: 2em;
+    background-color: #ee4b2b;
+    border: 2px solid #9986ce;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    font-size: 1em;
 }
 
 .carrousel__figure {
@@ -56,4 +62,38 @@
     display : inline-block;
     margin: 5px;
     
+}
+
+.carrousel__avant {
+    position: absolute;
+    top:35%;
+    right: 0%;
+
+    width: auto;
+    height: 10em;
+
+    display: flex;
+    float: right;
+    background-color: rgba(238, 75, 43, 0.8);
+    border: 2px solid #9986ce;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    font-size: 1em;
+    align-items: center;
+}
+
+.carrousel__retour {
+    position: absolute;
+    top:35%;
+    left: 0%;
+
+    width: auto;
+    height: 10em;
+
+    display: flex;
+    float: left;
+    background-color: rgba(238, 75, 43, 0.8);
+    border: 2px solid #9986ce;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    font-size: 1em;
+    align-items: center;
 }
