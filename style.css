@@ -13,9 +13,9 @@
 .carrousel__x {
   position: absolute;
   top: 5px;
-  right: 5px;
+  right: 43%;
   z-index: 3;
-  width: 2em;
+  width: 3em;
   height: 2em;
   background-color: #ee4b2b;
   border: 2px solid #9986ce;
@@ -62,10 +62,10 @@
 
 .carrousel__avant {
   position: absolute;
-  top: 35%;
+  top: 0%;
   right: 0%;
   width: auto;
-  height: 10em;
+  height: 100%;
   display: flex;
   float: right;
   background-color: rgba(238, 75, 43, 0.8);
@@ -77,10 +77,10 @@
 
 .carrousel__retour {
   position: absolute;
-  top: 35%;
+  top: 0%;
   left: 0%;
   width: auto;
-  height: 10em;
+  height: 100%;
   display: flex;
   float: left;
   background-color: rgba(238, 75, 43, 0.8);
