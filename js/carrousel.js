@@ -1,8 +1,8 @@
 (function(){
     //console.log('Début du carrousel')
    let bouton = document.querySelector(".carrousel__ouvrir")
-   let suivant
-   let retour
+   let suivant = document.querySelector(".carrousel__avant")
+   let retour = document.querySelector(".carrousel__retour")
    /* -------------------------------------------------------- Variable du carrousel */
    let carrousel  = document.querySelector(".carrousel")
    let carrousel__x = document.querySelector(".carrousel__x")
@@ -26,11 +26,11 @@
     * S'exécute une fois quand carrousel.js s'exécute
     * void Start :
     */
-
+      
       for (const elm of galerie__img)
       {
         elm.dataset.index = position
-        elm.addEventListener('mousedown',function(){
+        elm.addEventListener('mousedown', function(){
           index = this.dataset.index
           afficher_image(index)
           console.log(index)
@@ -42,13 +42,25 @@
       }
    
   /*-------------------------------------buttons avant arriere */
-  suivant.addEventListener(click, function avancerCarrousel(){
-        index = index -1
+  suivant.addEventListener('click', function avancerCarrousel(){
+        index ++ //ici c est un bug
+        console.log(index)
+        
+        if(index == galerie__img.length){
+          index = 0
+        }
+        afficher_image(index)
     }
   )
 
-  retour.addEventListener(click, function retourCarrousel(){
-        index = index +1  
+  retour.addEventListener('click', function retourCarrousel(){
+        index = index -1  
+        console.log(index)
+        
+        if(index == -1){
+          index = galerie__img.length -1
+        }
+        afficher_image(index)
   })
 
    /* ----------------------------------------------------  ouvrir boîte modale */
