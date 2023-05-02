@@ -39,8 +39,8 @@ function enfiler_script_css()
 add_action('wp_enqueue_scripts', 'enfiler_script_css' );
 
 function genere_boite()
-{
-    return '<button class="carrousel__ouvrir">Ouvrir Carrousel</button>
+{ //<button class="carrousel__ouvrir">Ouvrir Carrousel</button>
+    return '
             <div class="carrousel">
                 <button class="carrousel__x">X</button>
                 <figure class="carrousel__figure"></figure>

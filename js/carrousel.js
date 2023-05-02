@@ -1,6 +1,7 @@
 (function(){
     //console.log('Début du carrousel')
-   let bouton = document.querySelector(".carrousel__ouvrir")
+   //let bouton = document.querySelector(".carrousel__ouvrir")
+   let bouton = document.querySelector("figure")
    let suivant = document.querySelector(".carrousel__avant")
    let retour = document.querySelector(".carrousel__retour")
    /* -------------------------------------------------------- Variable du carrousel */
