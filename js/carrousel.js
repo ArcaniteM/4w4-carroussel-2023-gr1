@@ -85,8 +85,11 @@
    function creation_img_carrousel(elm){
          //console.log(elm.getAttribute('src'))
          let img = document.createElement('img')
-         // img.setAttribute('src', elm.getAttribute('src'))
-          img.src = elm.src
+          //img.setAttribute('src', elm.getAttribute('src'))
+          //img.src = elm.src
+          let longueur = elm.src.length-12 
+          //let extension = elm.src.substr(0,-4) 
+          img.src= elm.src.substr(0,longueur) + ".jpg" 
           img.classList.add('carrousel__img')
           //console.log (img.getAttribute('src'))
           carrousel__figure.appendChild(img)
@@ -122,12 +125,34 @@
       carrousel__form.children[ancien_index].checked = false
      }
      // carrousel__figure.children[index].style.opacity = 1
+     redimentionner_carrousel()
      carrousel__figure.children[index].classList.add('carrousel__img--activer')
      carrousel__form.children[index].checked = true
      ancien_index = index
    }
+    
+
   //index -1 quand on click sur img precedente, index +1
 
-    
+    function redimentionner_carrousel(){
+      /**recuperer les dimenssions de l'image courante */
+      const imageWidth = carrousel__figure.children[index].naturalWidth
+      const imageHeight = carrousel__figure.children[index].naturalHeight
+      const windowWidth = window.innerWidth
+      const windowHeight = window.innerHeight
+
+      let carrouselWidth = windowWidth
+      if(carrouselWidth > 1000){
+        const carrouselWidth = windowWidth - windowWidth/3
+      }
+      let carrouselHeight = carrouselWidth * imageHeight / imageWidth
+
+      carrousel.style.width = `${carrouselWidth}px`
+      carrousel.style.height = `${carrouselHeight}px`
+      carrousel.style.top = `${(windowHeight - carrouselHeight) /2}px`
+      carrousel.style.left = `${(windowWidth - carrouselWidth) /2}px`
+
+      console.log(`imagewidth = ${imagewidth} imageheight = ${imageheight} windowWidth = ${windowWidth} windowHeight = ${windowHeight}`)
+    }
    
    })()
