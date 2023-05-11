@@ -1,27 +1,30 @@
 .carrousel {
+
+
+    z-index: 9;
     position : fixed;
-    width : 50%;
-    height : 50%;
-    top:25%;
-    left:25%;
+    width : 100%;
+    height : 100%;
+    top:0%;
+    left:0%;
     border : 1px solid #444;
-    background-color: rgb(223, 71, 96);
+    background-color: aquamarine;
     transform : scale(0);
     transition : transform .5s;
-    //transform: translate(-50%, -50%);
 
+    @media screen and (min-width: 1000px) {
+        width : 75%;
+        height : 75%;
+        top:12.5%;
+        left:12.5%;
+    }
+ 
 }
 .carrousel__x {
     position: absolute;
     top :5px;
-    right : 43%;
+    right : 5px;
     z-index: 3;
-    width: 3em;
-    height: 2em;
-    background-color: #ee4b2b;
-    border: 2px solid #9986ce;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-    font-size: 1em;
 }
 
 .carrousel__figure {
@@ -55,45 +58,28 @@
     bottom: 0;
     text-align: center;
     width : 100%;
-    padding-right: 20%;
 }
 
 .carrousel__rad {
     display : inline-block;
     margin: 5px;
-    
 }
 
-.carrousel__avant {
-    position: absolute;
-    top:0%;
-    right: 0%;
-
-    width: auto;
-    height: 100%;
-
+.carrousel__suivant, .carrousel__precedent {
+    position : absolute;
+    width : 50px;
     display: flex;
-    float: right;
-    background-color: rgba(238, 75, 43, 0.8);
-    border: 2px solid #9986ce;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-    font-size: 1em;
+    justify-content: center;
     align-items: center;
+    border: 2px solid #666;
+    border-radius: 5px;
+    top : 50%;
 }
 
-.carrousel__retour {
-    position: absolute;
-    top:0%;
-    left: 0%;
+.carrousel__precedent{
+    left : 10px;
+}
 
-    width: auto;
-    height: 100%;
-
-    display: flex;
-    float: left;
-    background-color: rgba(238, 75, 43, 0.8);
-    border: 2px solid #9986ce;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-    font-size: 1em;
-    align-items: center;
+.carrousel__suivant{
+    right : 10px;
 }
